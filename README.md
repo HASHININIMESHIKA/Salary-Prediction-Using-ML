@@ -30,11 +30,11 @@ streamlit run app.py
 ## Model Training and Evaluation
 The application uses several machine learning models to predict software developer salaries:
 
-**Linear Regression**
-**Decision Tree Regressor**
-**Random Forest Regressor**
-**Support Vector Regressor**
-**K-Nearest Neighbors Regressor**
+- **Linear Regression**
+- **Decision Tree Regressor**
+- **Random Forest Regressor**
+- **Support Vector Regressor**
+- **K-Nearest Neighbors Regressor**
 
 The models were trained using a dataset that was cleaned and preprocessed to handle missing values and categorical variables. The application includes a comparison page that evaluates these models based on Mean Squared Error and R-Squared metrics.
 
