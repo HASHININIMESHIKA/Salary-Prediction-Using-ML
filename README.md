@@ -26,13 +26,13 @@ This project is a web application developed using Streamlit, which predicts the 
 git clone https://github.com/HASHININIMESHIKA/Streamlit_Web_Developer_Salary_Prediction.git
 cd Streamlit_Web_Developer_Salary_Prediction
 
-###Install Dependencies
+##Install Dependencies
 pip install -r requirements.txt
 
-###Run the Application
+##Run the Application
 streamlit run app.py
 
-###Model Training and Evaluation
+##Model Training and Evaluation
 The application uses several machine learning models to predict software developer salaries:
 **Linear Regression**
 **Decision Tree Regressor**
@@ -41,18 +41,18 @@ The application uses several machine learning models to predict software develop
 **K-Nearest Neighbors Regressor**
 The models were trained using a dataset that was cleaned and preprocessed to handle missing values and categorical variables. The application includes a comparison page that evaluates these models based on Mean Squared Error and R-Squared metrics.
 
-###Deployment
+##Deployment
 The application can be deployed on Streamlit Cloud. Ensure that the requirements.txt is up-to-date with all necessary dependencies.
 
-###Deployment Issues
+##Deployment Issues
 If you encounter issues such as large file sizes exceeding GitHub's limits, consider using Git Large File Storage (LFS). For compatibility errors during deployment, make sure your input data is properly validated and matches the model's expected format.
 
-###About the Developer
+##About the Developer
 This application was developed by Hashini Nimeshika, an undergraduate student at Horizon Campus, Sri Lanka, currently in the final year of their academic journey. With a keen interest in Artificial Intelligence and Machine Learning, this project reflects a passion for leveraging these technologies to solve real-world problems. The developer aims to pursue higher studies in AI and ML.
 
 
 
-### Key Points Covered:
+## Key Points Covered:
 - **Overview** of the project and its purpose.
 - **Features** available in the application.
 - **Installation** and running instructions.
