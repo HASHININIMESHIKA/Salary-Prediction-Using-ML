@@ -2,7 +2,7 @@ import streamlit as st
 
 def show_contact_page():
     st.title("Contact Us")
-    st.image("C:\Streamlit-assignment1\contact.jpeg", caption="Get in Touch", use_column_width=True)
+    st.image("contact.jpeg", caption="Get in Touch", use_column_width=True)
 
     st.write("""
     ### We'd love to hear from you!

@@ -2,7 +2,7 @@ import streamlit as st
 
 def show_about_page():
     st.title("About This Application")
-    st.image("C:\Streamlit-assignment1\software_development.jpeg", caption="Software Development", use_column_width=True)
+    st.image("software_development.jpeg", caption="Software Development", use_column_width=True)
     st.write("""
     ### Welcome to the Salary Prediction Application!
     This application helps software developers predict their potential salary based on their profile.

@@ -30,7 +30,7 @@ def clean_education(x) :
 
 @st.cache
 def load_data():
-  df = pd.read_csv("C:\Streamlit-assignment1\survey_results_public.csv")
+  df = pd.read_csv("survey_results_public.csv")
   df = df[["Country", "EdLevel", "YearsCodePro", "Employment", "ConvertedCompYearly"]]
   df = df.rename({"ConvertedCompYearly": "Salary"}, axis=1)
   df = df[df["Salary"].notnull()]
@@ -52,7 +52,7 @@ df = load_data()
 
 def show_visualization_page(): 
   st.title("Visualization of the dataset of salaries of software engineers")
-  st.image("C:\Streamlit-assignment1\plotting.png", caption="Software Development", use_column_width=True)
+  st.image("plotting.png", caption="Software Development", use_column_width=True)
   st.write(
         """
     ### Dataset - Stack overflow survey 2023

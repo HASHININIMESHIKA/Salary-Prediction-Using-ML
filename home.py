@@ -2,7 +2,7 @@ import streamlit as st
 
 def show_home_page():
     st.title("Welcome to the Salary Prediction Application!")
-    st.image("C:\Streamlit-assignment1\salaryprediction.jpg", caption="Software Developer salary", use_column_width=True)
+    st.image("salaryprediction.jpg", caption="Software Developer salary", use_column_width=True)
     st.write("""
     ### Discover Your Potential Earnings
     This application provides insights into the potential salaries for software developers based on various factors such as country, education level, and years of experience.

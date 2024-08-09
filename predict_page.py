@@ -16,7 +16,7 @@ le_country = data["le_country"]
 le_education = data["le_education"]
 
 def show_predict_page():
-    st.image("C:\Streamlit-assignment1\slider.jpeg", use_column_width=True)
+    st.image("slider.jpeg", use_column_width=True)
     st.title("Softaware Developers Salary Pediction")
     st.write("""### Dear Sir/Madam, We need some information to proceed with the prediction of your salary as a software developer, Thank you..!""")
 

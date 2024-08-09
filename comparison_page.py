@@ -8,12 +8,10 @@ from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.linear_model import LinearRegression
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.svm import SVR
-from sklearn.neighbors import KNeighborsRegressor
 
 @st.cache
 def load_data():
-    df = pd.read_csv("C:/Streamlit-assignment1/survey_results_public.csv") 
+    df = pd.read_csv("survey_results_public.csv") 
     df = df[["Country", "EdLevel", "YearsCodePro", "Employment", "ConvertedCompYearly"]]
     df = df.rename({"ConvertedCompYearly": "Salary"}, axis=1)
     df = df[df["Salary"].notnull()]
@@ -21,7 +19,6 @@ def load_data():
     df = df[df["Employment"] == "Employed, full-time"]
     df = df.drop("Employment", axis=1)
 
-    
     def clean_experience(x):
         if x == 'More than 50 years':
             return 50
@@ -52,7 +49,7 @@ def train_model(X_train, y_train, X_test, y_test, model):
 
 def show_comparison_page():
     st.title("Model Comparison")
-    st.image("C:\Streamlit-assignment1\comparision.jpg", caption="Comparision", use_column_width=True)
+    st.image("comparision.jpg", caption="Comparision", use_column_width=True)
     st.write("""
     ### 
     Welcome to the Model Comparison page! Here, we present a comparative analysis of various machine learning models. This section is designed to help you understand how different models perform against each other based on key metrics and evaluation criteria. Explore the results to gain insights into their strengths and weaknesses, and make informed decisions for your project.
@@ -79,15 +76,18 @@ def show_comparison_page():
         "Linear Regression": LinearRegression(),
         "Decision Tree": DecisionTreeRegressor(),
         "Random Forest": RandomForestRegressor(),
-        # "Support Vector Machine": SVR(),
-        # "K-Nearest Neighbors": KNeighborsRegressor()
+        
     }
 
     results = []
 
+    # Initialize the progress bar
+    progress_bar = st.progress(0)
+    total_models = len(models)
+
     st.write("### Actual values vs predicted values")
 
-    for model_name, model in models.items():
+    for i, (model_name, model) in enumerate(models.items()):
         mse, r2, y_pred = train_model(X_train, y_train, X_test, y_test, model)
         results.append({
             "Model": model_name,
@@ -95,7 +95,9 @@ def show_comparison_page():
             "R-Squared": r2
         })
 
-        
+        # Update the progress bar
+        progress_bar.progress((i + 1) / total_models)
+
         # Plot actual vs predicted
         fig, ax = plt.subplots()
         sns.scatterplot(x=y_test, y=y_pred, ax=ax)
@@ -111,16 +113,21 @@ def show_comparison_page():
     st.dataframe(results_df)
 
     # Plotting the comparison
-    st.write("### Model Performance Comparsion with R-Squared")
+    st.write("### Model Performance Comparison with R-Squared")
 
     fig, ax = plt.subplots()
     sns.barplot(x="Model", y="R-Squared", data=results_df, ax=ax)
     ax.set_title("R-Squared by Model")
     st.pyplot(fig)
 
-    st.write("### Model Performance Comparsion with Mean Squared Error")
+    st.write("### Model Performance Comparison with Mean Squared Error")
 
     fig, ax = plt.subplots()
     sns.barplot(x="Model", y="Mean Squared Error", data=results_df, ax=ax)
     ax.set_title("Mean Squared Error by Model")
     st.pyplot(fig)
+
+    # Completion message
+    st.success("Model comparison completed!")
+
+
