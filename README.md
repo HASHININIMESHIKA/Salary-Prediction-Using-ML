@@ -53,6 +53,9 @@ This application was developed by Hashini Nimeshika, an undergraduate student at
 - **License** details for legal clarity.
 - **Contact** information for further inquiries.
 
+### Deployed application
+Deployed streamlit Application: The application is live and accessible at [https://salary-prediction-using-ml-mnmgsctb4rdghgtrb9oyhy.streamlit.app/](https://salary-prediction-using-ml-mnmgsctb4rdghgtrb9oyhy.streamlit.app/). 
+
 ### Clone the Repository
 ```bash
 git clone https://github.com/HASHININIMESHIKA/Streamlit_Web_Developer_Salary_Prediction.git
